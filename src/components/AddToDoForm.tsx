@@ -1,18 +1,26 @@
 import React, { useState } from 'react';
 import { AddTodo } from './types';
 
+interface AddToDoFormProps {
+  addTodo: AddTodo;
 
-const AddToDoForm: React.FC = ({addTodo: AddTodo}) => {
-  const [addedTodo, setAddedTodo] = useState('')
+}
 
-  const handleSubmit = (event: any) => {
-    event.preventDefault();
-    addTodo(addedTodo)
+const AddToDoForm: React.FC<AddToDoFormProps> = ({ addTodo }) => {
+  const [newTodo, setNewTodo] = useState('')
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setNewTodo(e.target.value);
+  }
+
+  const handleSubmit = (e: React.FormEvent<HTMLButtonElement>) => {
+    e.preventDefault();
+    addTodo(newTodo)
   }
   return (
-    <form onClick={handleSubmit}>
-      <input type="text" onChange={(e) => setAddedTodo(e.target.value)} />
-      <button type="submit">Add Todo</button>
+    <form>
+      <input type="text" value={newTodo} onChange={handleChange} />
+      <button type="submit" onClick={handleSubmit}>Add Todo</button>
     </form>
   )
 }

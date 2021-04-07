@@ -33,9 +33,9 @@ const App: React.FC = () => {
     setTodos(newTodos);
   }
 
-  const addTodo: AddTodo = (addTodo) => {
-    let updatedTodo: Array<Todo> = [...todos, addTodo]
-    setTodos(updatedTodo);
+  const addTodo: AddTodo = (newTodo) => {
+    // let updatedTodo: Array<Todo> = [...todos, newTodo]
+    setTodos([...todos, {text: newTodo, complete: false }]);
   }
 
   return (
