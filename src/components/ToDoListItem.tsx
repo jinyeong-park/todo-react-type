@@ -1,10 +1,11 @@
 import React from 'react';
-
+import { Todo } from './types';
 interface ToDoListItemProps {
-  todo: {
-    text: string;
-    complete: boolean;
-  }
+  todo: Todo;
+  // todo: {
+  //   text: string;
+  //   complete: boolean;
+  // }
 
 }
 
