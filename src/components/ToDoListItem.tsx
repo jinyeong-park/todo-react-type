@@ -10,11 +10,13 @@ interface ToDoListItemProps {
 }
 
 const ToDoListItem: React.FC<ToDoListItemProps> = ({ todo })=> {
+
   return (
     <li>
-      <input type="checkbox" checked={todo.complete}>
-        {todo.text}
-      </input>
+      <label>
+        <input type="checkbox" checked={todo.complete} />
+          {todo.text}
+      </label>
     </li>
 
   )

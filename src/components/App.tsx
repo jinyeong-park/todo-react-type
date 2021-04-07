@@ -16,7 +16,7 @@ const todos: Array<Todo> = [
 const App: React.FC = () => {
   return (
     <div>
-      <ToDoListItem/>
+      <ToDoListItem todo={todos[0]}/>
     </div>
   )
 
