@@ -34,7 +34,8 @@ const App: React.FC = () => {
   }
 
   const addTodo: AddTodo = (newTodo) => {
-    // let updatedTodo: Array<Todo> = [...todos, newTodo]
+    // only add when text is not empty
+    newTodo.trim() !== "" &&
     setTodos([...todos, {text: newTodo, complete: false }]);
   }
 

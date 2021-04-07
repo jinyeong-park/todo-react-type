@@ -15,7 +15,10 @@ const AddToDoForm: React.FC<AddToDoFormProps> = ({ addTodo }) => {
 
   const handleSubmit = (e: React.FormEvent<HTMLButtonElement>) => {
     e.preventDefault();
+    // call addTodo in App
     addTodo(newTodo)
+    // clear out the input
+    setNewTodo("");
   }
   return (
     <form>
