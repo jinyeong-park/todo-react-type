@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import ToDoListItem from './ToDoListItem';
+import ToDoList from './ToDoList';
 import { Todo, ToggleTodo } from './types';
 
 // move to types.ts
@@ -34,8 +34,9 @@ const App: React.FC = () => {
 
   return (
     <React.Fragment>
-      <ToDoListItem todo={todos[0]} toggleTodo={toggleTodo}/>
-      <ToDoListItem todo={todos[1]} toggleTodo={toggleTodo}/>
+      <ToDoList todos={todos} toggleTodo={toggleTodo}/>
+      {/* <ToDoListItem todo={todos[0]} toggleTodo={toggleTodo}/>
+      <ToDoListItem todo={todos[1]} toggleTodo={toggleTodo}/> */}
     </React.Fragment>
 
   )
