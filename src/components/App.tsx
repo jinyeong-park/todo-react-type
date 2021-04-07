@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import ToDoListItem from './ToDoListItem';
-import { Todo } from './types';
+import { Todo, ToggleTodo } from './types';
 
 // move to types.ts
 // type Todo = {
@@ -18,7 +18,7 @@ const App: React.FC = () => {
   const [todos, setTodos] = useState(initialTodos);
 
   // funtion to toggle todo
-  const toggleTodo = (selectedTodo: Todo) => {
+  const toggleTodo: ToggleTodo = (selectedTodo) => {
     const newTodos = todos.map(todo => {
       if (todo === selectedTodo) {
         return {
