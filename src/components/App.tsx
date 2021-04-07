@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import ToDoList from './ToDoList';
 import AddToDoForm from './AddToDoForm';
-import { Todo, ToggleTodo } from './types';
+import { Todo, ToggleTodo, AddTodo } from './types';
 
 // move to types.ts
 // type Todo = {
@@ -33,12 +33,17 @@ const App: React.FC = () => {
     setTodos(newTodos);
   }
 
+  const addTodo: AddTodo = (addTodo) => {
+    let updatedTodo: Array<Todo> = [...todos, addTodo]
+    setTodos(updatedTodo);
+  }
+
   return (
     <React.Fragment>
       <ToDoList todos={todos} toggleTodo={toggleTodo}/>
       {/* <ToDoListItem todo={todos[0]} toggleTodo={toggleTodo}/>
       <ToDoListItem todo={todos[1]} toggleTodo={toggleTodo}/> */}
-      <AddToDoForm />
+      <AddToDoForm addTodo={addTodo}/>
     </React.Fragment>
 
   )
