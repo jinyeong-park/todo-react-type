@@ -1,5 +1,6 @@
 import React from 'react';
 import { Todo } from './types';
+import "./ToDoListItem.css";
 interface ToDoListItemProps {
   todo: Todo;
   // todo: {
@@ -13,7 +14,9 @@ const ToDoListItem: React.FC<ToDoListItemProps> = ({ todo })=> {
 
   return (
     <li>
-      <label>
+      <label
+        style={{ textDecoration: todo.complete ? "line-through" : "none"}}
+      >
         <input type="checkbox" checked={todo.complete} />
           {todo.text}
       </label>
