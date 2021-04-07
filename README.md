@@ -2,6 +2,9 @@
 
 Typescript with react
 
+## Screenshot
+![todolist](./todolist.png)
+
 ## Available Scripts
 
 In the project directory, you can run:
